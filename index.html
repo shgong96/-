@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>검측요청서 생성기</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar no-print">
+    <div class="brand">
+      <div class="title">검측요청서 생성기</div>
+      <div class="subtitle">GitHub Pages · 브라우저 작성 → PDF 저장</div>
+    </div>
+    <div class="actions">
+      <button id="btnNewNo" class="btn">번호 새로 발급</button>
+      <button id="btnPrint" class="btn btn-primary">PDF 저장</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card no-print">
+      <h2>입력</h2>
+      <div class="grid">
+        <label class="field"><span>검측요청서 번호</span><input id="reqNo" readonly></label>
+        <label class="field"><span>요청일자</span><input id="reqDate" type="date"></label>
+        <label class="field"><span>현장명</span><input id="siteName"></label>
+        <label class="field"><span>위치</span><input id="location"></label>
+        <label class="field"><span>공종</span><input id="trade"></label>
+        <label class="field"><span>검측부위</span><input id="part"></label>
+        <label class="field field-wide"><span>주요 확인사항</span><textarea id="summary"></textarea></label>
+      </div>
+    </section>
+
+    <section class="paper">
+      <h1>검측요청서</h1>
+      <p>번호: <span data-bind="reqNo"></span></p>
+      <p>요청일자: <span data-bind="reqDateFmt"></span></p>
+      <p>현장명: <span data-bind="siteName"></span></p>
+      <p>위치: <span data-bind="location"></span></p>
+      <p>공종: <span data-bind="trade"></span></p>
+      <p>검측부위: <span data-bind="part"></span></p>
+      <p>확인사항: <span data-bind="summary"></span></p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
